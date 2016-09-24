@@ -7,12 +7,14 @@ import {UserListComponent} from './user/list.component';
 import {UserShowComponent} from './user/show.component';
 import {routing} from './app.routing';
 import {UserApiService} from './user/api.service';
+import { UserDetailComponent } from './user/detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserListComponent,
     UserShowComponent,
+    UserDetailComponent,
   ],
   imports: [
     BrowserModule,
