@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {UserModel} from './user.model';
 
 @Component({
   selector: 'app-user-list',
@@ -7,7 +8,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class UserListComponent implements OnInit {
 
-  items = [
+  items: UserModel[] = [
     {id: 1, name: 'a'},
     {id: 2, name: 'b'},
     {id: 3, name: 'c'},

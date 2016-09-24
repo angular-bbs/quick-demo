@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {UserModel} from './user.model';
 
 @Component({
   selector: 'app-user-show',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserShowComponent implements OnInit {
 
-  item = {id: 1, name: 'a'};
+  item: UserModel = {
+    id: 1,
+    name: 'a'
+  };
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
