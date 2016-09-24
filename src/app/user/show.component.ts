@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {UserModel} from './user.model';
 import {UserApiService} from './api.service';
 import {ActivatedRoute} from '@angular/router';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-user-show',
@@ -10,7 +11,7 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class UserShowComponent implements OnInit {
 
-  item: UserModel;
+  item: Observable<UserModel>;
 
   constructor(private api: UserApiService, private activatedRoute: ActivatedRoute) {
   }

@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {UserModel} from './user.model';
-import * as _ from 'lodash';
+import {Observable} from 'rxjs';
 
 @Injectable()
 export class UserApiService {
@@ -19,11 +19,13 @@ export class UserApiService {
     }
   ];
 
-  query(): UserModel[] {
-    return this.items;
+  query(): Observable<UserModel> {
+    return Observable.from(this.items);
   }
 
-  get(id: number|string): UserModel {
-    return _.find(this.items, {id: +id});
+  get(id: number|string): Observable<UserModel> {
+    return Observable
+      .from(this.items)
+      .find(item=>item.id === +id);
   }
 }
