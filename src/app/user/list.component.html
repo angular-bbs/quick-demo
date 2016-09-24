@@ -1,3 +1,3 @@
-<p>
-  list works!
-</p>
+<div class="list-group">
+  <a class="list-group-item" *ngFor="let item of items" [routerLink]="[item.id]">{{item.name}}</a>
+</div>

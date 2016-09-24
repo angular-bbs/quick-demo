@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserShowComponent implements OnInit {
 
+  item = {id: 1, name: 'a'};
+
   constructor() { }
 
   ngOnInit() {
