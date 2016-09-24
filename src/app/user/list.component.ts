@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {UserModel} from './user.model';
+import {UserApiService} from './api.service';
 
 @Component({
   selector: 'app-user-list',
@@ -8,17 +9,12 @@ import {UserModel} from './user.model';
 })
 export class UserListComponent implements OnInit {
 
-  items: UserModel[] = [
-    {id: 1, name: 'a'},
-    {id: 2, name: 'b'},
-    {id: 3, name: 'c'},
-    {id: 4, name: 'd'},
-  ];
+  items: UserModel[];
 
-  constructor() {
+  constructor(private api: UserApiService) {
   }
 
   ngOnInit() {
+    this.items = this.api.query();
   }
-
 }

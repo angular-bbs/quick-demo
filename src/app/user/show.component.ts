@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {UserModel} from './user.model';
+import {UserApiService} from './api.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-user-show',
@@ -8,15 +10,13 @@ import {UserModel} from './user.model';
 })
 export class UserShowComponent implements OnInit {
 
-  item: UserModel = {
-    id: 1,
-    name: 'a'
-  };
+  item: UserModel;
 
-  constructor() {
+  constructor(private api: UserApiService, private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit() {
+    const id = this.activatedRoute.snapshot.params['id'];
+    this.item = this.api.get(id);
   }
-
 }

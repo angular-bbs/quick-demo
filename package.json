@@ -6,6 +6,7 @@
   "scripts": {
     "start": "ng2 serve",
     "g": "ng2 g",
+    "d": "ng2 d",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng2 test",
     "pree2e": "webdriver-manager update",

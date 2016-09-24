@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { UserListComponent } from './user/list.component';
 import { UserShowComponent } from './user/show.component';
 import {routing} from './app.routing';
+import {UserApiService} from './user/api.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import {routing} from './app.routing';
     HttpModule,
     routing,
   ],
-  providers: [],
+  providers: [UserApiService],
   entryComponents: [AppComponent],
   bootstrap: [AppComponent]
 })
